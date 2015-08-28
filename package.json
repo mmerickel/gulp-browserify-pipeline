@@ -1,0 +1,118 @@
+{
+  "name": "myapp",
+  "private": true,
+  "scripts": {
+      "build": "gulp build"
+  },
+  "dependencies": {
+    "aliasify": "^1.7.2",
+    "babel-eslint": "^4.1.0",
+    "babelify": "^6.2.0",
+    "bootstrap": "^3.3.5",
+    "bootstrap-sass": "^3.3.5",
+    "browserify": "^11.0.1",
+    "browserify-shim": "^3.8.9",
+    "classnames": "^2.1.3",
+    "debug": "^2.2.0",
+    "del": "^1.2.1",
+    "envify": "^3.4.0",
+    "eslint-plugin-react": "^3.3.0",
+    "font-awesome": "^4.3.0",
+    "gulp": "^3.9.0",
+    "gulp-autoprefixer": "^2.3.1",
+    "gulp-cached": "^1.1.0",
+    "gulp-concat": "^2.6.0",
+    "gulp-csso": "^1.0.0",
+    "gulp-debug": "^2.1.0",
+    "gulp-eslint": "^1.0.0",
+    "gulp-filter": "^3.0.1",
+    "gulp-imagemin": "^2.3.0",
+    "gulp-remember": "^0.3.0",
+    "gulp-rev": "^6.0.1",
+    "gulp-rev-replace": "^0.4.2",
+    "gulp-sass": "^2.0.3",
+    "gulp-sourcemaps": "^1.3.0",
+    "gulp-uglify": "^1.3.0",
+    "gulp-util": "^3.0.6",
+    "hover.css": "^2.0.2",
+    "jquery": "^2.1.4",
+    "lazypipe": "^1.0.1",
+    "merge-stream": "^1.0.0",
+    "moment": "^2.10.3",
+    "pikaday": "^1.3.3",
+    "react": "^0.13.3",
+    "react-bootstrap": "^0.23.7",
+    "react-redux": "^1.0.1",
+    "redux": "^1.0.1",
+    "redux-thunk": "^0.1.0",
+    "through2": "^2.0.0",
+    "velocity-animate": "^1.2.2",
+    "vinyl-buffer": "^1.0.0",
+    "vinyl-source-stream": "^1.0.0"
+  },
+  "devDependencies": {
+    "gulp-debug": "^2.0.0",
+    "gulp-livereload": "^3.5.0"
+  },
+  "aliasify": {
+    "aliases": {
+      "lib": "./webassets/scripts/lib"
+    }
+  },
+  "browser": {
+    "bootstrap": "./node_modules/bootstrap/dist/js/bootstrap.js"
+  },
+  "browserify-shim": {
+    "bootstrap": {
+      "depends": [
+        "jquery:jQuery"
+      ]
+    }
+  },
+  "browserify": {
+    "transform": [
+      [
+        "babelify",
+        {
+          "stage": 0,
+          "loose": "all"
+        }
+      ],
+      "browserify-shim",
+      "aliasify",
+      "envify"
+    ]
+  },
+  "eslintConfig": {
+    "env": {
+      "browser": true,
+      "node": true,
+      "es6": true
+    },
+    "ecmaFeatures": {
+      "jsx": true,
+      "modules": true
+    },
+    "parser": "babel-eslint",
+    "rules": {
+      "comma-dangle": 0,
+      "eol-last": 0,
+      "eqeqeq": [
+          2,
+          "smart"
+      ],
+      "quotes": 0,
+      "no-unused-vars": 1,
+      "strict": [
+        2,
+        "never"
+      ],
+      "react/jsx-uses-react": 2,
+      "react/jsx-uses-vars": 2,
+      "react/react-in-jsx-scope": 2
+    },
+    "plugins": [
+      "react"
+    ]
+  }
+}
